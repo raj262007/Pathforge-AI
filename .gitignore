@@ -1,0 +1,14 @@
+# Frontend
+node_modules/
+.next/
+.env
+.env.local
+
+# Backend
+venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# Scratch
+scratch/
