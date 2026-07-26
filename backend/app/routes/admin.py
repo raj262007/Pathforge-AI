@@ -127,6 +127,7 @@ async def select_admission(body: SelectAdmissionRequest, admin: dict = Depends(r
             full_name=admission.get("full_name"),
             plan=body.plan,
             password=raw_password,
+            domain=admission.get("domain", ""),
         )
         if not email_sent:
             raise HTTPException(

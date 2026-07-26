@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { API_BASE } from "@/lib/api";
 
 export default function AdmissionPage() {
   const [form, setForm] = useState({ fullName: "", email: "", whatsapp: "", enrollmentNo: "", branch: "", year: "", address: "", parentMobile: "", domain: "", reason: "" });
@@ -42,7 +43,7 @@ export default function AdmissionPage() {
       formData.append("photo", photo);
       formData.append("id_card", idCard);
 
-      const res = await fetch("http://localhost:8000/api/admission", {
+      const res = await fetch(`${API_BASE}/admission`, {
         method: "POST",
         body: formData,
       });

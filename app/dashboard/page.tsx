@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import { API_BASE } from "@/lib/api";
 
 interface Phase {
   phase_number: number;
@@ -50,7 +51,7 @@ export default function StudentDashboardPage() {
       return;
     }
 
-    fetch("http://localhost:8000/api/student/dashboard", {
+    fetch(`${API_BASE}/student/dashboard`, {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then(async (res) => {
@@ -61,7 +62,7 @@ export default function StudentDashboardPage() {
       .catch((err) => setError(err.message))
       .finally(() => setLoading(false));
 
-    fetch("http://localhost:8000/api/student/analytics", {
+    fetch(`${API_BASE}/student/analytics`, {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then((res) => res.json())

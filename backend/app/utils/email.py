@@ -45,7 +45,7 @@ def send_email(to_email: str, subject: str, html_body: str) -> bool:
         return False
 
 
-def send_selection_email(to_email: str, full_name: str, plan: str, password: str) -> bool:
+def send_selection_email(to_email: str, full_name: str, plan: str, password: str, domain: str = "") -> bool:
     plan_display = "Career Pro" if plan == "career_pro" else "Pro"
     login_link = f"{FRONTEND_URL}/smart-career-path"
 
@@ -110,7 +110,7 @@ def send_selection_email(to_email: str, full_name: str, plan: str, password: str
       <p class="message">
         We are thrilled to inform you that your application to <strong>PathForge AI</strong> has been
         <strong>approved!</strong> Out of many applicants, you have been selected for our
-        <strong>{plan_display} Plan</strong>. Your AI-powered career journey starts now. 🚀
+        <strong>{plan_display} Plan</strong> in the <strong>{domain}</strong> domain. Your AI-powered career journey starts now. 🚀
       </p>
       <div class="cred-box">
         <div class="cred-title">🔐 Your Login Credentials</div>
@@ -125,6 +125,10 @@ def send_selection_email(to_email: str, full_name: str, plan: str, password: str
         <div class="cred-row">
           <span class="cred-label">Plan</span>
           <span class="cred-value">{plan_display}</span>
+        </div>
+        <div class="cred-row">
+          <span class="cred-label">Domain</span>
+          <span class="cred-value">{domain}</span>
         </div>
         <div class="cred-row">
           <span class="cred-label">Valid Until</span>

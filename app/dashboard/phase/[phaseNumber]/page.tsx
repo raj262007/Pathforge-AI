@@ -1,8 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { useRouter, useParams } from "next/navigation";
-
-const API_BASE = "http://localhost:8000/api";
+import { API_BASE } from "@/lib/api";
 
 interface Lecture {
   topic_title: string;

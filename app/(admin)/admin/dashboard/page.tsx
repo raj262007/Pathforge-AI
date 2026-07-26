@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import { API_BASE } from "@/lib/api";
 
 type Admission = {
   id: string;
@@ -18,7 +19,7 @@ type Admission = {
   parent_mobile: string;
 };
 
-const API = "http://localhost:8000/api";
+const API = API_BASE;
 
 export default function AdminDashboard() {
   const router = useRouter();
