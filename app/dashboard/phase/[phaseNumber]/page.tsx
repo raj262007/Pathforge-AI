@@ -6,6 +6,7 @@ import { API_BASE } from "@/lib/api";
 interface Lecture {
   topic_title: string;
   video_url: string;
+  notes_content?: string | null;
 }
 
 interface PhaseData {
@@ -347,7 +348,13 @@ export default function PhaseDetailPage() {
                 </div>
               )}
 
-              {activeLecture && (
+              {activeLecture && activeLecture.video_url && activeLecture.notes_content && (
+                <div className="rounded-lg border border-blue-200 bg-blue-50 p-4 mb-3 whitespace-pre-wrap text-sm text-blue-900 leading-relaxed">
+                  {activeLecture.notes_content}
+                </div>
+              )}
+
+              {activeLecture && activeLecture.video_url && (
                 <div className="aspect-video rounded-lg overflow-hidden bg-black mb-4">
                   <iframe
                     key={activeLecture.video_url}
@@ -356,6 +363,12 @@ export default function PhaseDetailPage() {
                     title={activeLecture.topic_title}
                     allowFullScreen
                   />
+                </div>
+              )}
+
+              {activeLecture && !activeLecture.video_url && activeLecture.notes_content && (
+                <div className="rounded-lg border border-gray-200 bg-gray-50 p-5 mb-4 whitespace-pre-wrap text-sm text-gray-700 leading-relaxed">
+                  {activeLecture.notes_content}
                 </div>
               )}
             </>

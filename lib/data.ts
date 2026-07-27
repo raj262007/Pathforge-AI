@@ -1,9 +1,9 @@
 export const domains = [
-  { id: 1, title: "Full Stack Developer", icon: "🔧", duration: "26 weeks", description: "Frontend + Backend + DevOps — complete package", topics: ["React", "Node.js", "PostgreSQL", "Docker", "AWS"], comingSoon: false },
+  { id: 1, title: "Full Stack Developer", icon: "🔧", duration: "26 weeks", description: "Frontend + Backend + DevOps — complete package", topics: ["React", "Node.js", "MongoDB", "Docker", "AWS"], comingSoon: false },
   { id: 2, title: "Python Developer", icon: "🐍", duration: "22 weeks", description: "From Python basics to Django REST APIs", topics: ["Python", "OOP", "Django", "REST APIs", "PostgreSQL"], comingSoon: false },
-  { id: 3, title: "AI / ML Engineer", icon: "🤖", duration: "26 weeks", description: "From Python to LLMs — complete AI engineering journey", topics: ["Python", "NumPy", "Pandas", "TensorFlow", "OpenAI"], comingSoon: false },
+  { id: 3, title: "UI / UX Design ", icon: "🎨", duration: "20 weeks", description: "From design principles to Figma prototyping — complete UX journey", topics: ["Figma", "Wireframing", "User Research", "Prototyping", "Design Systems"], comingSoon: true },
   { id: 4, title: "Data Science", icon: "📊", duration: "24 weeks", description: "From raw data to insights — complete analytics path", topics: ["Python", "Pandas", "Matplotlib", "Scikit-learn", "SQL"], comingSoon: false },
-  { id: 5, title: "UI / UX Design (Coming Soon)", icon: "🎨", duration: "20 weeks", description: "From design principles to Figma prototyping — complete UX journey", topics: ["Figma", "Wireframing", "User Research", "Prototyping", "Design Systems"], comingSoon: true },
+  { id: 5, title: "AI / ML Engineer (Coming Soon)", icon: "🤖", duration: "26 weeks", description: "From Python to LLMs — complete AI engineering journey", topics: ["Python", "NumPy", "Pandas", "TensorFlow", "OpenAI"], comingSoon: false },
   { id: 6, title: "Cybersecurity (Coming Soon)", icon: "🛡️", duration: "24 weeks", description: "From networking basics to ethical hacking — complete security path", topics: ["Networking", "Linux", "Ethical Hacking", "Wireshark", "Kali Linux"], comingSoon: true },
   { id: 7, title: "Mobile App Developer (Coming Soon) ", icon: "📱", duration: "22 weeks", description: "From Flutter basics to published apps — complete mobile journey", topics: ["Flutter", "Dart", "Firebase", "REST APIs", "UI Design"], comingSoon: true },
 ];
