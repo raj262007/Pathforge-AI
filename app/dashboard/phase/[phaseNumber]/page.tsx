@@ -2,11 +2,13 @@
 import { useEffect, useState } from "react";
 import { useRouter, useParams } from "next/navigation";
 import { API_BASE } from "@/lib/api";
-
+import GatedYoutubePlayer from "@/components/shared/GatedYoutubePlayer";
 interface Lecture {
   topic_title: string;
   video_url: string;
   notes_content?: string | null;
+  start_time_seconds?: number;
+  end_time_seconds?: number | null;
 }
 
 interface PhaseData {
@@ -355,15 +357,14 @@ export default function PhaseDetailPage() {
               )}
 
               {activeLecture && activeLecture.video_url && (
-                <div className="aspect-video rounded-lg overflow-hidden bg-black mb-4">
-                  <iframe
-                    key={activeLecture.video_url}
-                    className="w-full h-full"
-                    src={`https://www.youtube.com/embed/${getYoutubeId(activeLecture.video_url)}?rel=0`}
-                    title={activeLecture.topic_title}
-                    allowFullScreen
-                  />
-                </div>
+                <GatedYoutubePlayer
+                  key={activeLecture.video_url}
+                  videoUrl={activeLecture.video_url}
+                  startTimeSeconds={activeLecture.start_time_seconds || 0}
+                  endTimeSeconds={activeLecture.end_time_seconds}
+                  alreadyCompleted={data.lecture_watched}
+                  onSegmentComplete={handleMarkWatched}
+                />
               )}
 
               {activeLecture && !activeLecture.video_url && activeLecture.notes_content && (
@@ -534,8 +535,7 @@ export default function PhaseDetailPage() {
                     <h3 className="font-medium text-gray-900">{proj.project_name}</h3>
                     <span className="text-xs px-2 py-0.5 rounded-full bg-gray-100 text-gray-600">{proj.difficulty}</span>
                   </div>
-                  <p className="text-sm text-gray-500 mb-3">{proj.description}</p>
-
+<p className="text-sm text-gray-500 mb-3 whitespace-pre-wrap">{proj.description}</p>
                   {proj.solution_reference && (
                     <a
                       href={proj.solution_reference}

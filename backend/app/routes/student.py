@@ -190,6 +190,8 @@ async def get_phase_detail(phase_number: int, student: dict = Depends(require_st
             "topic_title": row["topic_title"],
             "video_url": row["video_url"],
             "notes_content": row.get("notes_content"),
+            "start_time_seconds": row.get("start_time_seconds") or 0,
+            "end_time_seconds": row.get("end_time_seconds"),
         }
         for row in (lectures_resp.data or [])
     ]

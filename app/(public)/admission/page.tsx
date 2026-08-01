@@ -131,7 +131,7 @@ export default function AdmissionPage() {
               <option value="">Choose your career path</option>
               <option>Full Stack Developer</option>
               <option>Python Developer</option>
-              <option>AI / ML Engineer</option>
+              <option>UI/UX Design</option>
               <option>Data Science</option>
             </select>
           </div>
